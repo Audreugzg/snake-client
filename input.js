@@ -1,24 +1,37 @@
 // setup interface to handle user input from stdin
+let connection;
 const handleUserInput = function (key) {
   // your code here
   if (key === '\u0003') {
     process.exit();
   }
+  if (key === 'w') {
+    //console.log("Move: up");
+    connection.write("Move: up");
+  }
+  if (key === 'a') {
+    //console.log("Move: left");
+    connection.write("Move: left");
+  }
+  if (key === 's') {
+    //console.log("Move: down");
+    connection.write("Move: down");
+  }
+  if (key === 'd') {
+    //console.log("Move: right");
+    connection.write("Move: right");
+  }
 };
-// const setupInput = function () {
-//   const stdin = process.stdin;
-//   stdin.setRawMode(true);
-//   stdin.setEncoding("utf8");
-//   stdin.resume();
-//   stdin.on("data", handleUserInput);
-//   return stdin;
-// };
 
-const stdin = process.stdin;
-const setRawMode = stdin.setRawMode(true);
-const  setEncoding = stdin.setEncoding("utf8");
-const resume = stdin.resume();
-const on =  stdin.on("data", handleUserInput);
+const setupInput = function (conn) {
+  connection = conn;
+  const stdin = process.stdin;
+  stdin.setRawMode(true);
+  stdin.setEncoding("utf8");
+  stdin.resume();
+  stdin.on("data", handleUserInput);
+  
+  return stdin;
+};
 
-
-module.exports = {stdin,setRawMode,setEncoding,resume,on};
+module.exports = {setupInput};

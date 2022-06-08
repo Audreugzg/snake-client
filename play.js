@@ -1,23 +1,11 @@
-// const net = require("net");
-//const connect = require("./clients.js");
-const {conn,textEncoding,connData,connect,connect1} = require('./clients');
-const {stdin,setRawMode,setEncoding,resume,on} = require('./input')
+const {connect} = require("./clients.js");
+const {setupInput}  = require('./input');
 
 console.log("Connecting ...");
 
-//connect(); 
-conn;
-textEncoding;
-connData;
-connect;
-connect1;
+const conn = connect(); 
 
-//setupInput();
-stdin;
-setRawMode;
-setEncoding;
-resume;
-on;
+setupInput(conn);
 
 
 
