@@ -21,6 +21,10 @@ const handleUserInput = function (key) {
     //console.log("Move: right");
     connection.write("Move: right");
   }
+  if (key === 'm') {
+    //console.log("Move: right");
+    connection.write("Say: HaHaHa 🐍🐍🐍🇨🇦🇨🇳");
+  }
 };
 
 const setupInput = function (conn) {

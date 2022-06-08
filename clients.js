@@ -7,7 +7,7 @@ const connect = function () {
   });
 
   // interpret incoming data as text
-  conn.setEncoding("utf8");
+  conn.setEncoding("utf-8");
 
   conn.on("connect", () => {
     // code that does something when the connection is first established
