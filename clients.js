@@ -41,9 +41,9 @@ const connect = conn.on("connect", (client) => {
 const connect1 = conn.on("connect", (client) => {
       // code that does something when the connection is first established
       
-      setInterval(() => {
-        conn.write("Move: up");
-      }, 50);
+      // setInterval(() => {
+      //   conn.write("Move: up");
+      // }, 50);
       
 
     });
