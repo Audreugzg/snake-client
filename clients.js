@@ -35,8 +35,18 @@ const connect = conn.on("connect", (client) => {
        // code that does something when the connection is first established
        console.log("the connection is succussfully established");
        conn.write("Name: AG");
+       
 
      });
+const connect1 = conn.on("connect", (client) => {
+      // code that does something when the connection is first established
+      
+      setInterval(() => {
+        conn.write("Move: up");
+      }, 50);
+      
+
+    });
 
 
-module.exports = {conn,textEncoding,connData,connect};
+module.exports = {conn,textEncoding,connData,connect,connect1};
